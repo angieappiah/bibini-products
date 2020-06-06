@@ -1,82 +1,50 @@
-  
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .content {
-            max-width: 500px;
-            margin: auto;
-        }
+  <head>
+    <title>BIBINI-Products</title>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+  </head>
 
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">Bibini-Products</a>
 
-        td, th {
-            border: 0px;
-            text-align: left;
-            padding: 4px;
-        }
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        p {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        <ul class="nav navbar-nav">
+          <% if logged_in? %>
 
-        pre {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+            <li class="nav-product">
+              <a class="nav-link" href="/products/new">Add an Product</a>
+            </li>
 
-        h3 {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+            <li class="nav-product nav-right">
+              <a class="nav-link" href="/logout">Log Out</a>
+            </li>
 
-        h2 {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+          <% else %>
+            
+            <li class="nav-product">
+              <a class="nav-link" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-product">
+              <a class="nav-link" href="/login">Sign In</a>
+            </li>
 
-        #error { 
-            color: red;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .center {
-            text-align:center
-        }
-
-        .left {
-            text-align:left
-        }
-
-        .right {
-            text-align:right
-        }
-    </style>
-    <title>AVIDcraft || A Space to Create</title>
-</head>
-<body>
-
-    <table>
-    <tr>
-        <td><a href='/'><img src="/photos/logo.png" width=300></a></td>
-        <td>
-    	    <% if logged_in? %>
-                <p class="center">Hello, <%= current_user.username %>!<br>
-                <a href='/items'><img src="/photos/browse.png" width=75></a> <a href="/logout"><img src="/photos/signout.png" width=75></a></p>
-            <% else %>
-                <p class="center">Hi there!<br>
-                <a href="/login"><img src="/photos/signin.png" width=75></a> <a href="/signup"><img src="/photos/signup.png" width=75></a></p>
-            <% end %>  
-        </td>
-    </tr>
-    </table>
-
-    
-    
-    <div class="content">
-        <%= yield %>
+          <% end %> 
+        </ul>
+      </div>
+    </nav>
+    <div class="col-md-6 offset-md-3">
+      <%= yield %>
     </div>
-</body>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
 </html>

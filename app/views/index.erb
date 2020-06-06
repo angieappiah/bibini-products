@@ -1,13 +1,13 @@
   
 <h3>Welcome to BIBINI-Products!</h3>
-<p> A space to create.  At BIBINI-Products you can connect and share with other creators around the world.  Create an account today to gain access to all the features BIBINI-Products have to offer!</p>
+<p> Connect and share with other creators around the world.  Create an account today to gain access to all the features BIBINI-Products have to offer!</p>
 
 <% if logged_in? %>
-    <p> You are logged in as <%= current_user.username %><br><br>
-    Browse <a href='/products'>all products</a> or <a href="/logout">log izzout</a></p>
+   
+    Browse <a href='/products'>all products</a> or <a href="/logout">logout</a></p>
 <% else %>
     <p>You are not logged in. <br><br>
-    To gain access, please <a href="/login">sign in</a> or <a href="/signup">create an account</a>.</p>
+    To gain access, please <a href="/login">login</a> or <a href="/signup">create an account</a>.</p>
 <% end %>
 
 </div>
