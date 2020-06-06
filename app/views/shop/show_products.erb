@@ -3,11 +3,11 @@
     <table>
       <tr>
          <td><form action="/products/<%= @product.id %>/edit" method="get"><p class="right">product Options: 
-          <button type="submit" alt="Edit product"><img src="/photos/edit.png" width=55></button>
+          <button type="submit" alt="Edit product">Edit</button">
           </p></form></td>
               <td><form method="POST" action="/products/<%= @product.id %>"><p class="left">
               <input id="hidden" type="hidden" name="_method" value="DELETE">
-              <button type="submit" alt="Delete product"><img src="/photos/delete.png" width=55></button>
+              <button type="submit" alt="Delete product">Delete</button">
           </p></form></td>
      </tr>
   </table>

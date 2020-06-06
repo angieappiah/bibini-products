@@ -17,26 +17,22 @@ class ProductsController < ApplicationController
       if @product.errors.any?
         erb :"/shop/new_product"
       else
-        erb :"shop/show_product"
+        erb :"shop/show_products"
       end
     end
   
     get '/products/:id' do  
-      @failed = false
       @product = Product.find_by_id(params[:id])
-      redirect '/products' if @product.nil?
-      erb :"shop/show_product"
+      erb :"shop/show_products"
     end
   
     get '/pruducts/:id/edit' do
       @product = Product.find_by(id: params[:id])
-      authenticate
   
       if logged_in? && @product.user_id == current_user.id
         erb :"shop/edit_product"
       else
-        @failed = true
-        erb :"shop/show_product"
+        erb :"shop/show_products"
       end
     end
   
@@ -47,7 +43,7 @@ class ProductsController < ApplicationController
       if @product.errors.any?
         erb :"/shop/edit_product"
       else
-        erb :"shop/show_product"
+        erb :"shop/show_products"
       end
     end
   

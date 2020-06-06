@@ -5,7 +5,7 @@
 <% end %>
 
 <li>
-  <% @products.each do |product| %>
+  <% @user.products.each do |product| %>
      <p><a href="/products/<%= product.id %>"><%= product.title %></a> by <em>
      <a href="/users/<%= product.user.username %>"><%= product.user.username %></a></em></p>
   <% end %><br><br>

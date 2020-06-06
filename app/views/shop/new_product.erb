@@ -2,7 +2,7 @@
 
 <% if @product.errors.any? %>
   <div id="error">
-    <h2><%= @product.errors.count %> error(s) prohibited new product creation:</h2>
+    <h2><%= @product.errors.count %> error(s) occured:</h2>
  
     <ul>
     <% @product.errors.full_messages.each do |msg| %>

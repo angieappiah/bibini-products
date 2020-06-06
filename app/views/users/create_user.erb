@@ -2,7 +2,7 @@
 
 <% if @user.errors.any? %>
   <div id="error">
-    <h3><%= @user.errors.count %> error(s) prohibited account creation:</h3>
+    <h3><%= @user.errors.count %> error(s) occured:</h3>
  
     <ul>
     <% @user.errors.full_messages.each do |msg| %>
