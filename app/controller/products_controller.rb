@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
       if logged_in? && @product.user_id == current_user.id
         erb :"shop/edit_product"
       else
+        @failed = true
         erb :"shop/show_products"
       end
     end

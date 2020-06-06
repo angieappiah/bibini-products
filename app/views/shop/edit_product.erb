@@ -1,13 +1,15 @@
 <h3>Edit Your Product</h3>
 
 <% if @product.errors.any? %>
-  <div id="error">
-    <h3><%= @product.errors.count %> error(s) occured :</h3>
+   <div id="error">
+
+   <div id="error">
+     <h3><%= @product.errors.count %> error(s) occured :</h3>
  
-    <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+     <ul>
+         <% @product.errors.full_messages.each do |msg| %>
+             <li><%= msg %></li>
+           <% end %>
     </ul>
   </div>
 <% end %>
