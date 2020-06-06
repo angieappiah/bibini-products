@@ -1,0 +1,24 @@
+
+<% if @product.user_id == current_user.id %>
+    <table>
+      <tr>
+         <td><form action="/products/<%= @product.id %>/edit" method="get"><p class="right">product Options: 
+          <button type="submit" alt="Edit product"><img src="/photos/edit.png" width=55></button>
+          </p></form></td>
+              <td><form method="POST" action="/products/<%= @product.id %>"><p class="left">
+              <input id="hidden" type="hidden" name="_method" value="DELETE">
+              <button type="submit" alt="Delete product"><img src="/photos/delete.png" width=55></button>
+          </p></form></td>
+     </tr>
+  </table>
+<% end %>
+
+<h3><%= @product.title %> | $<%= @product.price %></h3>
+<img src="<%= @product.image %>" width=400>
+<p>About this product:
+<pre><%= @product.description %></pre></p>
+
+<p class="center">Created by <a href="/users/<%= @product.user.username %>"><%= @product.user.username %></a>
+<br><br><a href="mailto:<%= @product.user.email %>">Click here</a> to email the artist.</p>
+
+<p class="center"><a href="/products">Browse All products</a> || <a href='/'>Main Page</a></p>

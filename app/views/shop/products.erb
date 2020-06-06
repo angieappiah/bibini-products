@@ -1,0 +1,21 @@
+<% if @search %>
+	<h3>Showing products matching '<%= @word %>':</h3>
+    <% else %>
+    <p>Welcome, <%= @user.username %>, Here are all your products:<br>
+<% end %>
+
+<li>
+  <% @products.each do |product| %>
+     <p><a href="/products/<%= product.id %>"><%= product.title %></a> by <em>
+     <a href="/users/<%= product.user.username %>"><%= product.user.username %></a></em></p>
+  <% end %><br><br>
+<li>
+
+<form action='/products/search' method="post">
+    <p><label for="search">Search for any product:</label>
+    <input type="text" id="search" name="search">
+    <input type="submit"></p>
+</form>
+<br><br>
+<p class="center"><a href="/products/new">Create New product</a></p>
+<p class="center">Go back to <a href='/'>Main Page</a></p>

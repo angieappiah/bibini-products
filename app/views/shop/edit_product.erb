@@ -1,0 +1,35 @@
+<h3>Edit Your Product</h3>
+
+<% if @product.errors.any? %>
+  <div id="error">
+    <h3><%= @product.errors.count %> error(s) prohibited the edit of your product :</h3>
+ 
+    <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<form method="post" action="/products/<%= @product.id %>">
+    <p><input id="hidden" type="hidden" name="_method" value="patch">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="<%= @product.title %>"><br><br>
+
+    <label for="description">Enter a few sentences that describes your product:</label><br>
+    <textarea id="description" name="description" rows="10" cols="40"><%= @product.description %></textarea><br><br>
+
+    <label for="price">Price:</label>$ 
+    <input type="text" id="price" name="price" value="<%= @product.price %>"><br><br>
+
+    <label for="image">Link to Image:</label><br>
+    <input type="text" id="image" name="image" value="<%= @product.image %>" size="47"><br><br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+
+<p class="center"><a href="/products/<%= @product.id %>">Back to product</a> || <a href="/products">View All products</a></p>
+<p class="center">Go back to <a href='/'>Main Page</a></p>

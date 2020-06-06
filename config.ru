@@ -6,5 +6,5 @@ if ActiveRecord::Migrator.needs_migration?
 
 use Rack::MethodOverride
 use UserController
-#use ProductsController
+use ProductsController
 run ApplicationController
