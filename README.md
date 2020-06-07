@@ -1,7 +1,9 @@
  Bibini-products
+ 
  Welcome to the Bibini-products, a platform that promotes all businesses and services. The App is created using Sinatra and ActiveRecord.
 
  Installation
+
  -download or clone this project
  -cd into bibini-sinatra directory
  -run bundle install in your terminal 
