@@ -26,18 +26,18 @@ class ProductsController < ApplicationController
       erb :"shop/show_products"
     end
   
-    get '/pruducts/:id/edit' do
-      @product = Product.find_by(id: params[:id])
-  
-      if logged_in? && @product.user_id == current_user.id
-        erb :"shop/edit_product"
-      else
-        @failed = true
-        erb :"shop/show_products"
-      end
+    get '/products/:id/edit' do
+        @product = Product.find_by(id: params[:id])
+    
+        if logged_in? && @product.user_id == current_user.id
+          erb :"shop/edit_product"
+        else
+          @failed = true
+          erb :"shop/show_products"
+        end
     end
   
-    patch '/Products/:id' do
+    patch '/products/:id' do
       @product = Product.find_by(id: params[:id])
       @product.update(title: params[:title], description: params[:description], price: params[:price], image: params[:image])
               
