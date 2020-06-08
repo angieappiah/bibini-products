@@ -23,17 +23,6 @@ class ApplicationController < Sinatra::Base
             @current_user ||= User.find_by(id: session[:user_id])
         end
 
-        def authenticate
-            redirect '/' if !logged_in?
-        end
-
-        def clean_params(params)
-            np = params.dup
-            params.each do |k,v|
-                np[k] = Rack::Utils.escape_html(v)
-            end
-            np
-        end
     end 
 
 end
