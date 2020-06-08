@@ -7,6 +7,7 @@ class UserController < ApplicationController
     end
 
     post '/signup' do
+        authenticate
         @user = User.create(username: params[:username], email: params[:email], password: params[:password])
 
         if @user.errors.any?
@@ -37,7 +38,6 @@ class UserController < ApplicationController
     end
 
     get '/users/:slug' do
-        authenticate
         @user = User.find_by_slug(params[:slug])  
         erb :"users/show"
     end

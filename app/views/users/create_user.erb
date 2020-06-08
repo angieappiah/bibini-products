@@ -1,4 +1,4 @@
-<h3>Sign Up Below:</h3>
+<h3>Sign Up Below</h3>
 
 <% if @user.errors.any? %>
   <div id="error">
@@ -20,7 +20,7 @@
     <input type="text" name="email" value="<%= @user.email %>"><br><br>
 
     <label for="password">Password: </label><br>
-    <input type="text" name="password"><br><br>
+    <input type="password" name="password"><br><br>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
