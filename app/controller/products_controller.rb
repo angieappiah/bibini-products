@@ -58,7 +58,7 @@ class ProductsController < ApplicationController
     post '/products/search' do
       @user = current_user
       @word = params[:search]
-      @items = Product.where("title LIKE ?", "%#{params[:search]}%")
+      @products = Product.where("title LIKE ?", "%#{params[:search]}%")
       @search = true
       erb :"shop/products"
     end

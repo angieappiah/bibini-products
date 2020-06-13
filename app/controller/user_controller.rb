@@ -7,7 +7,6 @@ class UserController < ApplicationController
     end
 
     post '/signup' do
-        authenticate
         @user = User.create(username: params[:username], email: params[:email], password: params[:password])
 
         if @user.errors.any?
