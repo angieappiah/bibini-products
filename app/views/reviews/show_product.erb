@@ -1,0 +1,9 @@
+<% if @product.user_id == current_user.id %>
+    <table>
+      <tr>
+         <td><form action="/products/<%= @product.id %>/edit" method="get"><p class="right">reviews: 
+          <button type="submit" alt="Add review">Edit</button">
+         
+     </tr>
+  </table>
+<% end %>

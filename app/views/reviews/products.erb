@@ -1,0 +1,9 @@
+<p>Hey!, <%= @user.username %>, Here are all your products:<br>
+<li>
+  <% @user.products.each do |product| %>
+     <p><a href="/products/<%= product.id %>"><%= product.title %></a> 
+    
+  <% end %><br><br>
+<li>
+
+<p> click any product to add a REVIEW<p>

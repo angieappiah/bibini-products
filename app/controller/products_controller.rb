@@ -1,17 +1,18 @@
 class ProductsController < ApplicationController
+
     get '/products' do
       @user = current_user
       @products = Product.all
       erb :"shop/products"
     end
 
-        #new
+      
     get '/products/new' do
       @product = Product.new
       erb :"/shop/new_product"
     end
 
-       #create
+       
     post '/products' do
       @product = Product.create(title: params[:title], description: params[:description], price: params[:price], user: current_user, image: params[:image])
         
@@ -21,14 +22,15 @@ class ProductsController < ApplicationController
         erb :"shop/show_products"
       end
     end
-  
-       #show
-    get '/products/:id' do  
-      @product = Product.find_by_id(params[:id])
+
+    #localhost:9393/products/newest
+    get '/products/newest' do
+      @product = Product.last
       erb :"shop/show_products"
     end
   
-    #update
+  
+    
     get '/products/:id/edit' do
         @product = Product.find_by(id: params[:id])
     
@@ -66,3 +68,5 @@ class ProductsController < ApplicationController
     end
   
 end
+
+#write a route that a use can visit called /products/newest which shows the user the most recently added product in the database
