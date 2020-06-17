@@ -29,7 +29,11 @@ class ProductsController < ApplicationController
       erb :"shop/show_products"
     end
   
-  
+       
+    get '/products/:id' do  
+      @product = Product.find_by_id(params[:id])
+      erb :"shop/show_products"
+    end
     
     get '/products/:id/edit' do
         @product = Product.find_by(id: params[:id])

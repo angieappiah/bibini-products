@@ -1,4 +1,5 @@
 <p>Hey!, <%= @user.username %>, Here are all your products:<br>
+<p> click any product to add a REVIEW<p>
 <li>
   <% @user.products.each do |product| %>
      <p><a href="/products/<%= product.id %>"><%= product.title %></a> 
@@ -6,4 +7,5 @@
   <% end %><br><br>
 <li>
 
-<p> click any product to add a REVIEW<p>
+<p class="center"><a href="/products/new">Create New product</a></p>
+<p class="center">Go back to <a href='/'>Main Page</a></p>
