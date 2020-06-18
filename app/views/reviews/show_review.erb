@@ -1,12 +1,19 @@
 
-
-
-
 <p>About this product:
 <pre><%= @reviews %></pre></p>
 
+<% if @views %>
+    <h3>'<%= @words %>'</h3>
+  <% else %>
+    <p>oops, <%= @user.username %>, try again:<br>
+ 
+<% end %>
 
-<br><a href="/reviews:<%= @reviews %>">Click here</a> to ADD A REVIEW.</p>
+<form action='/reviews/' method="post">
+  <p><label for="views">this is your review:</label>
+    <input type="hidden" id="views" name="views">
+   
+</form>
 
 
 

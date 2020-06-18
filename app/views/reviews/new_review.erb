@@ -2,11 +2,11 @@
 
 
 
-<form method="post" action="/products/<%= @product.id %>">
-    <p><input id="text" type="text" name="_method" value="post">
+<form method="post" action="/reviews/<%= @reviews %>">
+    
     <p><label for="Add Reviews">Add a Review to this product: </label><br>
 
-    <label for="reviews">review:</label><br>
+    <label for="review">review:</label><br>
     <textarea id="review" name="review" rows="10" cols="40" ></textarea><br><br>
     <button type="submit" class="btn btn-primary">Submit</button>
   
