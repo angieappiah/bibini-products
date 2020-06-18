@@ -1,0 +1,13 @@
+<h3><%= current_user.username %></h3>
+
+
+<form action='/reviews' method='post'>
+    <p><label for="Add Reviews">Add a Review to this product: </label><br>
+
+    <label for="reviews">review:</label><br>
+    <textarea id="review" name="review" rows="10" cols="40" ></textarea><br><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  
+</form>
+<p class="center"><a href="/products/new">Create New product</a> or <a href='/products'>all products</a></p>
+<p class="center">Go back to <a href='/'>Main Page</a></p>

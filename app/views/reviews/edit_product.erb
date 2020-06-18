@@ -13,3 +13,14 @@
      </ul>
   </div>
 <% end %>
+
+
+<form method="post" action="/products/<%= @product.id %>">
+    <p><input id="hidden" type="hidden" name="_method" value="patch">
+
+    <label for="description">Enter a few sentences that describes your product:</label><br>
+    <textarea id="description" name="description" rows="10" cols="40"><%= @product.description %></textarea><br><br>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> 

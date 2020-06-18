@@ -18,7 +18,8 @@
 <p>About this product:
 <pre><%= @product.description %></pre></p>
 
-<p class="center">Created by <a href="/users/<%= @product.user.username %>"><%= @product.user.username %></a>
+<br><a href="/reviews:<%= @reviews %>">Click here</a> to ADD A REVIEW.</p>
+
 <br><br><a href="mailto:<%= @product.user.email %>">Click here</a> to email the owner.</p>
 
 <p class="center"><a href="/products">Browse All products</a> || <a href='/'>Main Page</a></p>

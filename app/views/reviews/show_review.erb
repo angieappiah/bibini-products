@@ -1,0 +1,19 @@
+
+    <table>
+      <tr>
+         <td><form action="/reviews/<%= @reviews %>/edit" method="get"><p class="right">product Options: 
+          <button type="submit" alt="new review">Edit</button">
+          </p></form></td>
+              <td><form method="POST" action="/reviews/<%= @reviews %>"><p class="left">
+              <input id="hidden" type="hidden" name="_method" value="DELETE">
+              <button type="submit" alt="Delete product">Delete</button">
+              <td><form method="POST" action="/reviews/<%= @reviews %>"><p class="left">
+              <input id="hidden" type="hidden" name="_method" value="REVIEW">
+              <button type="submit" alt="Add Review to product">Review</button">
+          </p></form></td>
+     </tr>
+  </table>
+
+
+
+
