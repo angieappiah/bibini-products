@@ -11,17 +11,11 @@ class ReviewsController < ApplicationController
     erb :"/reviews/new_review"
   end
 
-
   post '/reviews/' do
-     @user = current_user
-     @products = Product.all
-      @words = params[:views]
-      if @views = true
-    erb :"/reviews/show_review"
-      else
-        redirect '/reviews'
-      end
-
+    @user = current_user
+    @word = params[:views]
+    @views = true
+    erb :"reviews/show_review"
   end
 
   patch '/reviews' do
