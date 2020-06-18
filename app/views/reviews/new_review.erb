@@ -1,7 +1,9 @@
 <h3><%= current_user.username %></h3>
 
 
-<form action='/reviews' method='post'>
+
+<form method="post" action="/products/<%= @product.id %>">
+    <p><input id="text" type="text" name="_method" value="post">
     <p><label for="Add Reviews">Add a Review to this product: </label><br>
 
     <label for="reviews">review:</label><br>
