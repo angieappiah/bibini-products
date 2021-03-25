@@ -5,14 +5,12 @@ class ProductsController < ApplicationController
       @products = Product.all
       erb :"shop/products"
     end
-
       
     get '/products/new' do
       @product = Product.new
       erb :"/shop/new_product"
     end
-
-       
+  
     post '/products' do
       @product = Product.create(title: params[:title], description: params[:description], price: params[:price], user: current_user, image: params[:image])
         
@@ -28,8 +26,7 @@ class ProductsController < ApplicationController
       @product = Product.last
       erb :"shop/show_products"
     end
-  
-       
+    
     get '/products/:id' do  
       @product = Product.find_by_id(params[:id])
       erb :"shop/show_products"
